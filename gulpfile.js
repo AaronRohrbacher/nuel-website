@@ -4,14 +4,32 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var open = require('gulp-open');
+var fileinclude = require('gulp-file-include');
 
 var Paths = {
   HERE: './',
   DIST: 'dist/',
   CSS: './assets/css/',
   SCSS_TOOLKIT_SOURCES: './assets/scss/argon-design-system.scss',
-  SCSS: './assets/scss/**/**'
+  SCSS: './assets/scss/**/**',
+  scripts: {
+    src: './',
+    dest: './build/'
+  }
 };
+
+gulp.task('compile-html', function() {
+  return gulp.src([
+    '*.html',
+    '!header.html', // ignore
+    '!footer.html' // ignore
+    ])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest(Paths.scripts.dest));
+});
 
 gulp.task('compile-scss', function() {
   return gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
