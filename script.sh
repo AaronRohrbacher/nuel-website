@@ -21,3 +21,7 @@ for dir in **/; do
 done
 gulp build-css
 gulp build-html
+gulp build-js
+cd ..
+cp assets/fonts build/assets -r
+cp assets/img build/assets -r

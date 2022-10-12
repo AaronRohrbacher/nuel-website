@@ -1,0 +1,12 @@
+{
+  "tokens": {
+    "RMLibs": "http://ads.pictela.com/ads/jsapi/ADTECH.js",
+    "size": "320x50",
+    "Copyrights": "Copyright 2010-2014 AOL Platforms.",
+    "Author": "Martin Wojtala"
+  },
+  "page": {
+    "name": "example",
+    "title": "EXAMPLE TITLE"
+  }
+}

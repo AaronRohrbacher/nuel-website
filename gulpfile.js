@@ -7,6 +7,7 @@ var open = require('gulp-open');
 var fileinclude = require('gulp-file-include');
 var cleanCSS = require('gulp-clean-css');
 var htmlmin = require('gulp-htmlmin');
+var minify = require('gulp-minify');
 
 var Paths = {
   HERE: './',
@@ -49,5 +50,11 @@ gulp.task('build-html', function () {
 gulp.task('build-css', function() {
   return gulp.src('./assets/**/*.css')
     .pipe(cleanCSS())
+    .pipe(gulp.dest('./build/assets'))
+});
+
+gulp.task('build-js', function() {
+  return gulp.src('./assets/**/*.js')
+    .pipe(minify())
     .pipe(gulp.dest('./build/assets'))
 });
