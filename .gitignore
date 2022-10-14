@@ -1,5 +1,5 @@
 node_modules/
 package-lock.json
-# build/
-# pre-build/
+build/
+pre-build/
 *Zone.Identifier
