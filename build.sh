@@ -8,8 +8,8 @@ cd pre-build
 absolute_path="$PWD"
 for dir in **/; do
     title=$(jq .page.title config-title-meta.json)
-    replace {{title}} "$title" *
-    echo "$dir"
+    replace "{{title}}" "$title" *
+    echo "Replacing titles in $dir"
     cd "$absolute_path/$dir"
     if test -f ./config-title-meta.json; then
         title=$(jq .page.title config-title-meta.json)
@@ -25,3 +25,5 @@ gulp build-js
 cd ..
 cp assets/fonts build/assets -r
 cp assets/img build/assets -r
+sudo rm -rf /var/www/html/*
+sudo cp build/* /var/www/html/ -r

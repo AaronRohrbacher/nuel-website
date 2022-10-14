@@ -14,7 +14,7 @@ var Paths = {
   DIST: 'dist/',
   CSS: './assets/css/',
   SCSS_TOOLKIT_SOURCES: './assets/scss/argon-design-system.scss',
-  SCSS: './assets/scss/**/**',
+  SCSS: './assets/scss/**/**'
 };
 
 gulp.task('compile-html', function() {
